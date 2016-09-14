@@ -13,6 +13,17 @@
       sql_on: ${fact_3mo_metrics.toperiod} = ${dim_time.calendardate}
       relationship: many_to_one
       type: inner
+      
+- explore: fact_3mo_metrics_waggs
+  joins:
+    - join: dim_entity
+      sql_on: ${fact_3mo_metrics_waggs.entity_pk} = ${dim_entity.entity_pk}
+      relationship: many_to_one
+      type: inner
+    - join: dim_time
+      sql_on: ${fact_3mo_metrics_waggs.toperiod} = ${dim_time.calendardate}
+      relationship: many_to_one
+      type: inner
 
 # - explore: dealer_data_points_wrollups
 

@@ -30,15 +30,14 @@
     type: string
     sql: ${TABLE}.division
 
-  - dimension_group: fromperiod
-    type: time
-    timeframes: [date, week, month]
-    convert_tz: false
+  - dimension: fromperiod
+    type: date
     sql: ${TABLE}.fromperiod
 
-  - dimension: ncsinsi_score
+  - dimension: ncsinsi_score_hidden
     type: number
     sql: ${TABLE}."NCSI-NSI_SCORE"
+    hidden: true
 
   - dimension: region
     type: string
@@ -48,10 +47,8 @@
     type: number
     sql: ${TABLE}.row_count
 
-  - dimension_group: toperiod
-    type: time
-    timeframes: [date, week, month]
-    convert_tz: false
+  - dimension: toperiod
+    type: date
     sql: ${TABLE}.toperiod
 
   - measure: count

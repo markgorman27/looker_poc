@@ -26,10 +26,8 @@
     type: string
     sql: ${TABLE}.division
 
-  - dimension_group: fromperiod
-    type: time
-    timeframes: [date, week, month]
-    convert_tz: false
+  - dimension: fromperiod
+    type: date
     sql: ${TABLE}.fromperiod
 
   - dimension: ncsinsi_score
@@ -44,10 +42,8 @@
     type: number
     sql: ${TABLE}.row_count
 
-  - dimension_group: toperiod
-    type: time
-    timeframes: [date, week, month]
-    convert_tz: false
+  - dimension: toperiod
+    type: date
     sql: ${TABLE}.toperiod
 
   - measure: count
