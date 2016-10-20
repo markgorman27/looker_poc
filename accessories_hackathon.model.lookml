@@ -28,6 +28,10 @@
       sql_on: ${accessories_fact_mtd_model_part_metrics.model} = ${accessories_dim_model.model}
       relationship: many_to_one
       type: inner      
+    - join: accessories_dim_part
+      sql_on: ${accessories_fact_mtd_model_part_metrics.part_number} = ${accessories_dim_part.part_number}
+      relationship: many_to_one
+      type: inner           
     - join: dim_entity
       sql_on: ${accessories_fact_mtd_model_part_metrics.entity_pk} = ${dim_entity.entity_pk}
       relationship: many_to_one

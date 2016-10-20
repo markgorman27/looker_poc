@@ -2,12 +2,14 @@
   sql_table_name: tempqiong_clean.l_fact_mtd_model_part_metrics
   fields:
 
-  - measure: acc_pnvr_samplesize
-    type: number
+  - measure: acc_pnvr_samplesize_raw
+    hidden: true
+    type: sum
     sql: ${TABLE}."ACC_PNVR_SAMPLESIZE"
 
-  - measure: acc_pnvr_score
-    type: number
+  - measure: acc_pnvr_score_raw
+    hidden: true
+    type: sum
     sql: ${TABLE}."ACC_PNVR_SCORE"
 
   - dimension: entity
@@ -33,4 +35,8 @@
   - dimension: toperiod
     type: date
     sql: ${TABLE}.toperiod
+    
+  - measure: acc_pnvr_score
+    type: number
+    sql: case when ${acc_pnvr_samplesize_raw} != 0 then ${acc_pnvr_score_raw}/${acc_pnvr_samplesize_raw} end
 
