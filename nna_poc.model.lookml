@@ -137,3 +137,5 @@
 
 # - explore: fact_qtd_metrics2
 
+- explore: nmaccoverage
+
