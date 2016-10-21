@@ -24,6 +24,8 @@
       sql_on: ${fact_3mo_metrics_waggs.toperiod} = ${dim_time.calendardate}
       relationship: many_to_one
       type: inner
+      
+- explore: weird_report_ds4068
 
 # - explore: dealer_data_points_wrollups
 
