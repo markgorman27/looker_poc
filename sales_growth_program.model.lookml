@@ -13,4 +13,4 @@
 #     - join: users
 #       sql_on: ${users.id} = ${orders.user_id}
 
-- explore: dealer_data_points_wrollups_sgp
+- explore: fact_mtd_metrics_sgp
