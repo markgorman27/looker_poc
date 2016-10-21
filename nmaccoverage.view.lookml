@@ -4,23 +4,19 @@
 
   - dimension_group: date
     type: time
-    timeframes: [date, week, month]
+    timeframes: [date]
     convert_tz: false
     sql: ${TABLE}.date
 
-  - dimension: denominator
-    type: number
+  - measure: denominator
+    type: max
     sql: ${TABLE}.denominator
 
-  - dimension: onedaycoverage
-    type: number
+  - measure: onedaycoverage
+    type: max
     sql: ${TABLE}.onedaycoverage
 
-  - dimension: sevendaycoverage
-    type: number
+  - measure: sevendaycoverage
+    type: max
     sql: ${TABLE}.sevendaycoverage
-
-  - measure: count
-    type: count
-    drill_fields: []
 
