@@ -35,4 +35,5 @@
   - measure: acc_pnur_score
     type: number
     sql: case when ${acc_pnur_samplesize_raw} != 0 then ${acc_pnur_score_raw}/${acc_pnur_samplesize_raw} end
+    value_format: '$#.00'
 
